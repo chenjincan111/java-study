@@ -3,7 +3,7 @@ package java_study1;
 public class Hello {
 
 	public static void main(String[] args) {
-		System.out.println("git 测试成功！！");
+		System.out.println("git 测试成功2！！");
 	}
 	
 }
