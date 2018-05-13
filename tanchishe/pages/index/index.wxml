@@ -1,0 +1,4 @@
+
+<canvas class='canvas_class' canvas-id="snakeVanvas" bindtouchstart="snakeTouchStart" bindtouchmove="snakeTouchMove" bindtouchend="snakeTouchEnd"></canvas>
+
+
