@@ -8,9 +8,14 @@ var snakeObject = {
   w:20,h:20
 };
 
+var snakeBody = [];
+var foods = [];
+var windowW = 0,windowH = 0;
+
 var direction = "right";
 var snakeMoveDirecion = "right";
 var frameNum = 0;
+var collideBol = true;
 
 Page({
   data: {
@@ -39,12 +44,51 @@ Page({
   snakeTouchEnd: function (e) {
     snakeMoveDirecion = direction;
   },
+
   onReady: function(){
     var context = wx.createCanvasContext();
+
+    function drawSnake(snakeObject) {
+      context.setFillStyle(snakeObject.color);
+      context.beginPath();
+      context.rect(snakeObject.x, snakeObject.y, snakeObject.w, snakeObject.h);
+      context.closePath();
+      context.fill();
+    }
+//碰撞函数
+    function  collide(obj1,obj2){
+      var l1= obj1.x;
+      var r1 = l1+obj1.w;
+      var t1 = obj1.y;
+      var b1 = t1+obj1.h;
+
+      var l2 = obj2.x;
+      var r2 = l2 + obj2.w;
+      var t2 = obj2.y;
+      var b2 = t2+obj2.h;
+      if(r1>l2 && l1<r2 && b1>t2 && t1<b2){
+            return true;
+      }else{
+            return false;
+      }
+    }
 
     function animate(){
       frameNum++;
       if (frameNum % 20 == 0) {
+        snakeBody.push({
+          color: "green",
+          x: snakeObject.x, y: snakeObject.y,
+          w: 20, h: 20
+        });
+        if (snakeBody.length > 2) {
+          if (collideBol){
+            snakeBody.shift();
+          }else{
+            collideBol = true;
+          }
+         
+        }
         switch (snakeMoveDirecion) {
           case 'right':
             snakeObject.x += 20;
@@ -61,11 +105,19 @@ Page({
         }
       }
 
-      context.setFillStyle(snakeObject.color);
-      context.beginPath();
-      context.rect(snakeObject.x, snakeObject.y, snakeObject.w, snakeObject.h);
-      context.closePath();
-      context.fill();
+      drawSnake(snakeObject);
+
+      for(var i=0;i<snakeBody.length;i++){
+        drawSnake(snakeBody[i]);
+      }
+      for (var i = 0; i < foods.length; i++) {
+        drawSnake(foods[i]);
+        if (collide(snakeObject, foods[i])){
+          console.info("撞上了");
+          collideBol = false;
+          foods[i].reset();
+        }
+      }
 
       wx.drawCanvas({
         canvasId:"snakeVanvas",
@@ -74,7 +126,36 @@ Page({
       
       requestAnimationFrame(animate);
     }
-    animate();  
+    function random(min, max){
+      return parseInt(Math.random() * (max - min)) + min;
+    }
+    function Food(){
+      this.x = random(0,windowW);
+      this.y = random(0, windowH);
+      this.w = 15;
+      this.h = 15;
+      this.color = "rgb(" + random(0,255) + "," + random(0,255) + ","+ random(0,255) +   ")";
+
+      this.reset = function(){
+        this.x = random(0, windowW);
+        this.y = random(0, windowH);
+        this.color = "rgb(" + random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")";
+      }
+
+    }
+     wx.getSystemInfo({
+      success: function (res) {
+        windowW = res.windowWidth;
+        windowH = res.windowHeight;
+
+        for(var i=0;i<1;i++){
+            var foodObj = new Food();
+            foods.push(foodObj);
+        }
+        animate();
+      }
+    })
+     
   },
   onLoad: function () {
         
