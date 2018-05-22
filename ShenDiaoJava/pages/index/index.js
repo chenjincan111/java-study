@@ -1,4 +1,4 @@
-var API_URL = 'https://api.douban.com/v2/movie/top250';
+var API_URL = getApp().globalData.APP_URL+'/sdJava/movie/getAllMovies';
 
 Page({
   data: {
@@ -14,7 +14,7 @@ Page({
   	});
 
   	wx.request({
-  		url:API_URL,
+      url:  API_URL,
   		data:{},
   		header:{
   			'Content-Type': 'application/json'
@@ -23,10 +23,16 @@ Page({
   			wx.hideToast();
   			var data = res.data;
   			console.log(data);
-  			that.setData({
-  				title:data.title,
-  				movies:data.subjects
-  			});
+        if (!data.success){
+          that.setData({
+            title: "获取数据异常"
+          });
+        }else{
+          that.setData({
+            title: data.title,
+            movies: data.movies
+          });
+        }
   		}
   	});
   }

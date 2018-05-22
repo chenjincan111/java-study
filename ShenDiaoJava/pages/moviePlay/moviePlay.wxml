@@ -1,0 +1,8 @@
+
+<view class="section tc">
+  <video  id="myVideo" src="{{movie.vedioUrl}}" style='width:100%'   controls calss="vedio-box" danmu-list="{{danmuList}}" bindtimeupdate="vedioUpdate" enable-danmu danmu-btn></video>
+  <view class="btn-area">
+    <input placeholder="请输入要说的话" type='text' value="{{inputTxt}}" class="danmu_input" maxlength='60' confirm-type="send" bindblur="bindInputBlur"/>
+    <button bindtap="bindSendDanmu" type='primary'>发送弹幕</button>
+  </view>
+</view>

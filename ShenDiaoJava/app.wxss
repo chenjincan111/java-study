@@ -57,4 +57,13 @@ page{
 	color: red;
 }
 
+vedio{
+  width: 100%;
+}
+
+.danmu_input{
+  height: 100rpx;
+  background-color: rgb(248,248,248);
+}
+
 

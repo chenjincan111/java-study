@@ -3,9 +3,14 @@
   flex-direction: column;
   align-items: center;
   height: 1000rpx;
-  padding: 50rpx 40rpx;
+  padding: 20rpx 40rpx;
 }
-
+.play_nav{
+  width: 170rpx;
+}
+.playBtn{
+  margin-left:75rpx;
+}
 .poster {
   width: 80%;
   height: 80%;

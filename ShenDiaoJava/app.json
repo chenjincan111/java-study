@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/movie/movie",
     "pages/search/search",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/moviePlay/moviePlay"
   ],
   "window":{
     "backgroundTextStyle":"light",
