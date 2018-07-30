@@ -16,6 +16,13 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function getRes(res){
+  var index = res.lastIndexOf(":");
+  res = res.substring(index + 1, res.length);
+  return res;
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  getRes: getRes
 }

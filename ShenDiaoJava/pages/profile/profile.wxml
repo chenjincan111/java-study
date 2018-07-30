@@ -1,1 +1,25 @@
-<view>这是我的页</view>
+<view class='profile'>
+<scroll-view class="page-body view_color" scroll-y="true">
+		<view class="item">
+				<image class="poster" src="{{userInfo.avatarUrl}}"></image>
+        <view class="meta">
+          <text class="title">{{userInfo.nickName}}</text>
+          <text class="artists">{{userInfo.province}} - {{userInfo.city}}</text>
+        </view>
+		</view> 
+</scroll-view>
+<br/>
+<scroll-view class="page-body view_color view2" scroll-y="true">
+  <navigator url="../movieAdd/movieAdd" >
+    <view class="item">
+      <image class="setIcon"  src="/images/upload.png"></image><text class='view2-text'>上传视频</text>
+    </view>
+  </navigator>
+  <navigator url="../myMovie/myMovie" >
+    <view class="item">
+      <image class="setIcon"  src="/images/my-vedio.png"></image><text class='view2-text'>我的视频</text>
+    </view>
+  </navigator>
+</scroll-view>
+
+</view>

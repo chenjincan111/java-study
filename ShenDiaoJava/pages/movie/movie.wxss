@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1000rpx;
+  /* height: 1000rpx; */
   padding: 20rpx 40rpx;
 }
 .play_nav{
@@ -12,9 +12,9 @@
   margin-left:75rpx;
 }
 .poster {
-  width: 80%;
-  height: 80%;
-  margin: 20rpx;
+  width: 100%;
+  height: 100%; 
+ // margin: 20rpx;
 }
 
 .title {
@@ -23,7 +23,7 @@
 }
 
 .info {
-  font-size: 18rpx;
+  font-size: 30rpx;
   color: #888;
   margin-top: 20rpx;
   width: 80%;
@@ -32,6 +32,8 @@
 .summary {
   width: 80%;
   margin: 30rpx auto;
+  border-top:1px dotted gray;
+  padding-top: 20rpx;
 }
 
 .label {
@@ -40,6 +42,6 @@
 
 .content {
   color: #666;
-  font-size: 20rpx;
+  font-size: 26rpx;
   padding: 10rpx
 }

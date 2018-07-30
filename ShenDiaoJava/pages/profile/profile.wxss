@@ -1,0 +1,19 @@
+.view_color{
+  background: ghostwhite
+}
+.view2 view{
+  height: 60rpx;
+  padding-top:20rpx;
+}
+.view2-text{
+  vertical-align:middle;
+  padding-top:15rpx;
+}
+.view2{
+  margin-top: 20rpx;
+}
+.setIcon{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right:20rpx
+}

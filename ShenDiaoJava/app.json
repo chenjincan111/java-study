@@ -4,13 +4,17 @@
     "pages/movie/movie",
     "pages/search/search",
     "pages/profile/profile",
-    "pages/moviePlay/moviePlay"
+    "pages/moviePlay/moviePlay",
+    "pages/movieAdd/movieAdd",
+    "pages/myMovie/myMovie"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "神雕爪蛙",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "gray"
   },
   "tabBar":{
     "color":"#ccc",
@@ -28,7 +32,7 @@
         "pagePath":"pages/search/search"
       },
       {
-        "text":"我的",
+        "text":"我的视频",
         "iconPath":"images/profile.png",
         "selectedIconPath":"images/profile-actived.png",
         "pagePath":"pages/profile/profile"

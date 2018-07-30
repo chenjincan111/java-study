@@ -1,0 +1,20 @@
+<view>
+<scroll-view class="page-body view_color" scroll-y="true">
+  <view class='bgImg {{titleBg}}' >
+			<input class='input-view' name="title" value="{{subMsg.titleValue}}" bindinput="titleInput" placeholder="请输入视频标题"  />
+  </view>
+  <view>
+			<button class='buttom-view' bindtap='uploadVedio'>点击上传视频<icon class='icon-position' type="{{vedioType}}" size="20"/> </button>		
+  </view>
+  <view>
+			<button  class='buttom-view' bindtap='uploadImg'>点击上传封面图片<icon class='icon-position' type="{{imgType}}" size="20"/> </button>	
+      <text  bindtap='showImg' style='margin-left:38%;color:blue;display:{{showImgDisplay}}'>预览图片</text>
+  </view>
+  <view class='bgImg {{txareaBg}}'>
+      <textarea value="{{subMsg.summaryValue}}" bindinput="summaryInput" class='textarea-view' placeholder="视频简介" auto-focus />
+  </view>
+  <view>
+      <button type="primary" bindtap='submitMsg'>提交</button> 
+  </view>
+</scroll-view>
+</view>

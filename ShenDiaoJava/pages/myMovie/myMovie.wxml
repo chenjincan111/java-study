@@ -1,5 +1,5 @@
 <view class="page-header">
-  <input class="page-header-text" placeholder="输入搜索关键词" auto-focus bindchange="search"/>
+	<text class="page-header-text">{{title}}</text>
 </view>
 <scroll-view class="page-body" scroll-y="true">
 	<navigator url="../movie/movie?id={{item.id}}" wx:for="{{movies}}">

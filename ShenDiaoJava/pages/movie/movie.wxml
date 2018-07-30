@@ -1,7 +1,11 @@
 <scroll-view scroll-y="true">
+  <view style='height:699rpx;width:90%;padding:20rpx'>
+     <image class="poster" src="{{movie.imgUrl}}" background-size="cover"></image>
+    </view>
   <view class="meta">
-    <image class="poster" src="{{movie.imgUrl}}" background-size="cover"></image>
-    <text class="title">{{movie.title}}({{movie.date}})</text>
+   
+    <text class="title">{{movie.title}}</text>
+     <text class="title">({{movie.date}})</text>
     <text class="info">评分：{{movie.rating}}</text>
     <text class="info">导演：<block> {{movie.author}} </block></text>
     <!-- <text class="info">主演：<block wx:for="{{movie.casts}}"> {{item.name}} </block></text> -->

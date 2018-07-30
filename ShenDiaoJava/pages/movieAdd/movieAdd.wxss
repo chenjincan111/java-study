@@ -1,0 +1,42 @@
+.page-body view{
+  margin-top: 30rpx;
+}
+
+.bgImg{
+  background-repeat:no-repeat;
+  background-size:50rpx;
+  background-position:90%;
+}
+.bgSuccessImg{
+  background-image:url(../../images/success.png?);
+}
+.bgWarnImg{
+  background-image:url(../../images/warn.png?);
+}
+
+.icon-position{
+  margin-left: 40rpx
+}
+
+.input-view{
+  padding-left: 30rpx;
+  height: 100rpx;
+  border-radius:50rpx;
+  margin-right:30rpx;
+  margin-left: 30rpx;
+  border: 2px solid gray;
+}
+.buttom-view{
+  border-radius:50rpx;
+  margin-right:30rpx;
+  margin-left: 30rpx;
+}
+
+.textarea-view{
+  border-radius:50rpx;
+  margin-right:30rpx;
+  margin-left: 30rpx;
+  border: 2px solid gray;
+  width:auto;
+  padding:30rpx;
+}
